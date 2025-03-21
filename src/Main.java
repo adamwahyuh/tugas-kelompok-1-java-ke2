@@ -84,57 +84,75 @@ class Ui{
 
 class AngkaKeHuruf{
     public  static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Masukan angka anda\n: ");
+            String inputStr= scanner.nextLine();
+            if (inputStr.equalsIgnoreCase("exit")){
+                System.out.println("Kembali ke Main Menu...");
+                Tidur.tidur();
+                break;
+            }
 
-        System.out.print("Masukkan nilai angka: ");
-        if (scanner.hasNextDouble()) { // Mengecek apakah input adalah angka (bisa desimal atau bulat)
-            double nilai = scanner.nextDouble();
+            try { // Mengecek apakah input adalah angka (bisa desimal atau bulat)
+                double nilai = Double.parseDouble(inputStr);
 
-            if (nilai >= 85 && nilai <= 100) {
-                System.out.println("Nilai huruf: A");
-                Tidur.tidur();
-            } else if (nilai >= 70 && nilai <= 84) {
-                System.out.println("Nilai huruf: B");
-                Tidur.tidur();
-            } else if (nilai >= 60 && nilai < 70) {
-                System.out.println("Nilai huruf: C");
-                Tidur.tidur();
-            } else if (nilai >= 50 && nilai < 60) {
-                System.out.println("Nilai huruf: D");
-                Tidur.tidur();
-            } else if (nilai < 50 && nilai >= 0) {
-                System.out.println("Nilai huruf: E");
-                Tidur.tidur();
-            } else {
-                System.out.println("Nilai di luar batas! Masukkan nilai antara 0 - 100.");
+                if (nilai >= 85 && nilai <= 100) {
+                    System.out.println("Nilai huruf: A");
+                    Tidur.tidur();
+                } else if (nilai >= 70 && nilai <= 84) {
+                    System.out.println("Nilai huruf: B");
+                    Tidur.tidur();
+                } else if (nilai >= 60 && nilai < 70) {
+                    System.out.println("Nilai huruf: C");
+                    Tidur.tidur();
+                } else if (nilai >= 50 && nilai < 60) {
+                    System.out.println("Nilai huruf: D");
+                    Tidur.tidur();
+                } else if (nilai < 50 && nilai >= 0) {
+                    System.out.println("Nilai huruf: E");
+                    Tidur.tidur();
+                } else {
+                    System.out.println("Nilai di luar batas! Masukkan nilai antara 0 - 100.");
+                    Tidur.tidur();
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Input bukan angka! Silakan masukkan angka yang valid.");
                 Tidur.tidur();
             }
-        } else {
-            System.out.println("Input bukan angka! Silakan masukkan angka yang valid.");
-            Tidur.tidur();
         }
     }
 }
 class PositifNegatifNol{
     public  static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan angka: ");
-        double number = scanner.nextDouble();
-        if (scanner.hasNextDouble()) { // Periksa apakah input adalah angka
-            if (number > 0) {
-                System.out.println("Bilangan Positif");
-                Tidur.tidur(); // Buat Delay .. Jangan Dihapus biar bagus .. Budayakan Sabar :) .. Anjayy
-            } else if (number < 0) {
-                System.out.println("Bilangan Negatif");
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Masukan angka anda\n: ");
+            String inputStr= scanner.nextLine();
+            if (inputStr.equalsIgnoreCase("exit")){
+                System.out.println("Kembali ke Main Menu...");
                 Tidur.tidur();
-            } else {
-                System.out.println("Bilangan Nol");
+                break;
+            }
+            try {
+                double number = Double.parseDouble(inputStr);
+                if (number > 0) {
+                    System.out.println("Bilangan Positif");
+                    Tidur.tidur(); // Buat Delay .. Jangan Dihapus biar bagus .. Budayakan Sabar :) .. Anjayy
+                } else if (number < 0) {
+                    System.out.println("Bilangan Negatif");
+                    Tidur.tidur();
+                } else {
+                    System.out.println("Bilangan Nol");
+                    Tidur.tidur();
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Input bukan angka!");
                 Tidur.tidur();
             }
-        } else {
-            System.out.println("Input bukan angka!");
-            Tidur.tidur();
+
         }
+
     }
 }
 class GenapAtauGanjil{
@@ -162,6 +180,7 @@ class GenapAtauGanjil{
             }
         }
     }
+
 }
 class KonversiAngkaKeHuruf{
     static Scanner scan = new Scanner(System.in);
