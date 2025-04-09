@@ -73,6 +73,7 @@ public class Main {
             }
             else {
                 System.out.println("Ngarang aja, itu ada di menu pilih!");
+                Tidur.tidur();
             }
         }
     }
